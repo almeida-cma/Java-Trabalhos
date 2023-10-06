@@ -1,0 +1,80 @@
+Um exemplo básico de como criar uma aplicação Swing no NetBeans para ler um valor, ler um desconto e exibir o valor com o desconto aplicado:
+
+1) Crie um novo projeto:
+
+Abra o NetBeans.
+Selecione "File" > "New Project...".
+Escolha "Java" na categoria e "Java Application" no tipo de projeto. Clique em "Next >".
+Dê um nome ao seu projeto e clique em "Finish".
+
+2) Adicione um JFrame:
+
+No painel "Projects", clique com o botão direito no nome do seu projeto.
+Selecione "New" > "JFrame Form".
+Dê um nome a ele, por exemplo, "CalculadoraDesconto" e clique em "Finish".
+
+3) Desenhe sua interface:
+
+Abra o JFrame recém-criado (ele estará na pasta "Source Packages" > "[nome do seu pacote]").
+No editor visual, arraste e solte os componentes:
+2 JLabel para descrições ("Enter value:" e "Enter discount (%):").
+2 JTextField para entrada dos valores.
+1 JButton para calcular.
+1 JLabel para mostrar o resultado.
+
+4) Adicione a lógica:
+
+Dê um duplo clique no JButton para criar um evento de clique.
+Adicione o seguinte código ao evento:
+---------------------------------------------------------------------------
+
+Lógicas para exercícios:
+------------------------
+1. Conversão de Moeda:
+Digamos que em vez de aplicar um desconto, queremos converter uma quantia de uma moeda para outra com base em uma taxa de câmbio.
+
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    try {
+        double valorOriginal = Double.parseDouble(jTextField1.getText());
+        double taxaConversao = Double.parseDouble(jTextField2.getText());
+
+        double valorConvertido = valorOriginal * taxaConversao;
+
+        jLabelResult.setText("Valor convertido: " + valorConvertido);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, insira números válidos.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
+----------------------------------------------------------------------
+2. Cálculo de IMC (Índice de Massa Corporal):
+Aqui, vamos considerar que o primeiro campo seja o peso (em kg) e o segundo a altura (em metros).
+
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    try {
+        double peso = Double.parseDouble(jTextField1.getText());
+        double altura = Double.parseDouble(jTextField2.getText());
+
+        double imc = peso / (altura * altura);
+
+        jLabelResult.setText("IMC: " + imc);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, insira números válidos.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
+-----------------------------------------------------------------------
+3. Cálculo de Juros Simples:
+Vamos considerar que o primeiro campo seja o valor principal e o segundo a taxa de juros em porcentagem.
+
+private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    try {
+        double principal = Double.parseDouble(jTextField1.getText());
+        double taxaJuros = Double.parseDouble(jTextField2.getText());
+
+        double juros = principal * (taxaJuros / 100);
+
+        jLabelResult.setText("Juros: " + juros);
+    } catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "Por favor, insira números válidos.", "Erro", JOptionPane.ERROR_MESSAGE);
+    }
+}
+---------------------------------------------------------------------
