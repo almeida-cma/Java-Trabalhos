@@ -25,7 +25,7 @@ No editor visual, arraste e solte os componentes:
 4) Adicione a lógica:
 
 Dê um duplo clique no JButton para criar um evento de clique.
-Adicione o seguinte código ao evento:
+Adicione o código do arquivo "JButton1ActionPerformed.txt" ao evento:
 ---------------------------------------------------------------------------
 
 Lógicas para exercícios:
